@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>twitter点赞</title>
+	<script src="jquery-1.9.1.js"></script>
+	<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	body{
+		background-color: #121721;
+	}
+	.stage{
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%); 	/* IE 9 */
+		-moz-transform: translate(-50%, -50%); 	/* Firefox */
+		-webkit-transform: translate(-50%, -50%); /* Safari 和 Chrome */
+		-o-transform: translate(-50%, -50%); 
+	}
+	.heart{
+		width: 100px;
+		height: 100px;
+		background: url(heart.png) no-repeat;
+		background-position: 0 0;
+		-webkit-transition: background-position 1s steps(28);
+		-o-transition: background-position 1s steps(28);
+		transition: background-position 1s steps(28);
+		transition-duration: 0s;
+		cursor: pointer;
+	}
+	.heart.active{
+		transition-duration: 1s;
+		-webkit-transition-duration: 1s;
+		background-position: -2800px 0;
+	}
+	</style>
+</head>
+<body>
+	<div class="stage">
+		<div class="heart"></div>
+	</div>
+	<script>
+		$(function(){
+			$(".heart").click(function(event) {
+				$(this).toggleClass('active');
+			});
+		})
+	</script>
+</body>
+</html>
